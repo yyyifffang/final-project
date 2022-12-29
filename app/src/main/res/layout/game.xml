@@ -3,150 +3,195 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.test.GameActivity">
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/game_back">
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/ivZeroZero"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivZeroOne"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivZeroTwo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivZeroThree"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
 
-        <LinearLayout
-            android:id="@+id/show"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="180dp">
-
-                <Button
-                    android:id="@+id/btn1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:background="@android:color/transparent"
-                    android:text="@null" />
-
-                <Button
-                    android:id="@+id/btn2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15dp"
-                    android:background="@android:color/transparent"
-                    android:text="@null" />
-
-                <Button
-                    android:id="@+id/btn3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginRight="60dp"
-                    android:background="@android:color/transparent"
-                    android:text="@null" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
-
-                <Button
-                    android:id="@+id/btn4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="40dp"
-                    android:background="@android:color/transparent"
-                    android:text="@null" />
-
-                <Button
-                    android:id="@+id/btn5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:background="@android:color/transparent"
-                    android:text="@null" />
-
-                <Button
-                    android:id="@+id/btn6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:background="@android:color/transparent"
-                    android:text="@null" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
-
-                <Button
-                    android:id="@+id/btn7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="30dp"
-                    android:background="@null"
-                    android:text="@null" />
-
-                <Button
-                    android:id="@+id/btn8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="30dp"
-                    android:background="@null"
-                    android:text="@null" />
-
-                <Button
-                    android:id="@+id/btn9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="25dp"
-                    android:background="@null"
-                    android:text="@null" />
-            </LinearLayout>
-        </LinearLayout>
-    </FrameLayout>
-
-    <RelativeLayout
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_dark">
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/ivOneZero"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivOneOne"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivOneTwo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivOneThree"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
 
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/ivTwoZero"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivTwoOne"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivTwoTwo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivTwoThree"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/ivThreeZero"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivThreeOne"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivThreeTwo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/ivThreeThree"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="whackAMole"
+            android:clickable="false"
+            android:background="@drawable/emptyhole"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
         <Button
-            android:id="@+id/bt_play"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:text="開始"
-            android:textSize="20dp"/>
-
+            android:id="@+id/btStartWhackAMole"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:onClick="btnClick"
+            android:text="开始"/>
         <TextView
-            android:id="@+id/tv_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="30"
-            android:textSize="35sp"/>
-
+            android:id="@+id/tvWhackAMoleScore"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="分数"/>
         <Button
-            android:id="@+id/bt_over"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="10dp"
-            android:background="@null"
-            android:text="結束"
-            android:textSize="20sp"/>
-    </RelativeLayout>
+            android:id="@+id/btStopWhackAMole"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:onClick="btnClick"
+            android:text="结束"/>
+    </LinearLayout>
+
 </LinearLayout>

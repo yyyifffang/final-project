@@ -1,4 +1,4 @@
-package com.example.afinal;
+package com.example.test;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -24,7 +24,7 @@ public class GameActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.game);
         init();
     }
 
@@ -53,11 +53,11 @@ public class GameActivity extends Activity {
     }
 
     public void whackAMole(View view){
-        view.setBackgroundResource(R.drawable.cry);
+        view.setBackgroundResource(R.drawable.gift);
         view.setClickable(false);
         score++;
-        time=time_s-score*10;
-        tvWhackAMoleScore.setText("分数："+score);
+        time=time_s-score*20;
+        tvWhackAMoleScore.setText("分數："+score);
     }
     public void btnClick(View view){
         switch (view.getId()){
@@ -67,7 +67,7 @@ public class GameActivity extends Activity {
                 num=0;
                 score=0;
                 flag=0; //开始
-                tvWhackAMoleScore.setText("分数：0");
+                tvWhackAMoleScore.setText("分數：0");
                 new MyAsyncTask().execute();
                 break;
             case R.id.btStopWhackAMole:
@@ -113,7 +113,7 @@ public class GameActivity extends Activity {
                 if((num-score)==5){
                     flag=1;
                     btStartWhackAMole.setClickable(true);
-                    Toast.makeText(GameActivity.this,"游戏结束",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GameActivity.this,"遊戲結束",Toast.LENGTH_SHORT).show();
                 }
                 temp_i=values[0];
                 temp_j=values[1];

@@ -1,14 +1,14 @@
-package com.example.afinal;
+package com.example.test;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private Button startGame;
     private Button continueGame;
@@ -65,5 +65,4 @@ public class MainActivity extends Activity {
                     break;
             }        }
     }
-
 }
