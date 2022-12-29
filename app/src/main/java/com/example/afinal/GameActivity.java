@@ -22,18 +22,18 @@ public class GameActivity extends Activity {
     private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
     private LinearLayout show;
 
-    private int bgAtrr[] = new int[9];  //保存九张带有老鼠的背景图
-    private int btnAtrr[] = new int[9]; //保存九个洞对应的按钮
-    private MyHandler myHandler = new MyHandler();
+    private final int[] bgAtr = new int[9];  //保存九张带有老鼠的背景图
+    private final int[] btnAtr = new int[9]; //保存九个洞对应的按钮
+    private final MyHandler myHandler = new MyHandler();
     private SumTime sumTime;
     private GameTime gameTime;
     private GoTime goTime;
     private ClickTime clickTime;
 
-    private int t = 59;
-    private int sumMouse = 0; //弹出老鼠总个数
-    private int clickMouse = 0; //用户点中的老鼠个数
-    private int mouseCheckedId = 0; //当前弹出图片在数组中的序号
+    private int t = 29;
+    private int sumMouse = 0; //出現數量
+    private int clickMouse = 0; //打到的數量
+    private int mouseCheckedId = 0; //圖片序號(第幾個洞)
 
     private boolean flag = true;  //用于限制开始按钮的有效点击次数
 
@@ -55,7 +55,7 @@ public class GameActivity extends Activity {
         public void run() {
             super.run();
             try {
-                sleep(60000);
+                sleep(30000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -84,7 +84,7 @@ public class GameActivity extends Activity {
             super.run();
             while (!isStoped) {
                 try {
-                    sleep(1000);
+                    sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -129,7 +129,7 @@ public class GameActivity extends Activity {
         @Override
         public void run() {
             try {
-                Thread.sleep(60000);
+                Thread.sleep(30000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -148,17 +148,17 @@ public class GameActivity extends Activity {
                 case 0:
                     sumTime.interrupt();
                     AlertDialog.Builder dialog = new AlertDialog.Builder(GameActivity.this);
-                    dialog.setTitle("游戏结束");
-                    dialog.setMessage("本轮地鼠总数为： " + sumMouse + " 只 \n" +
-                            "您逮住的地鼠共：" + clickMouse + " 只\n" +
-                            "捕获率：" + clickMouse * 100 / sumMouse + "%"
+                    dialog.setTitle("遊戲结束");
+                    dialog.setMessage("出現 " + sumMouse + " 隻麋鹿 \n" +
+                            "逮到 " + clickMouse + " 隻\n" +
+                            "捕獲率：" + clickMouse * 100 / sumMouse + "%"
                     );
                     dialog.setCancelable(false);
-                    dialog.setPositiveButton("再试一次", new DialogInterface.OnClickListener() {
+                    dialog.setPositiveButton("再試一次", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            times.setText(60 + "");
-                            t = 60;
+                            times.setText(30 + "");
+                            t = 30;
                             sumMouse = 0;
                             clickMouse = 0;
                             onRestart();
@@ -169,9 +169,9 @@ public class GameActivity extends Activity {
                 case 1:
                     Random random = new Random();
                     int index = random.nextInt(9);
-                    show.setBackgroundResource(bgAtrr[index]);
+                    show.setBackgroundResource(bgAtr[index]);
                     sumMouse++;
-                    if (btnAtrr[index] == mouseCheckedId) {
+                    if (btnAtr[index] == mouseCheckedId) {
                         clickMouse++;  //判断当前老鼠所在的RadioButton的id与用户点击的是否一致，若一致则为打中地鼠
                     }
                     break;
@@ -227,44 +227,44 @@ public class GameActivity extends Activity {
     }
 
     private void initAtrr() {
-        bgAtrr[0] = R.drawable.game_background_1;
-        bgAtrr[1] = R.drawable.game_background_2;
-        bgAtrr[2] = R.drawable.game_background_3;
-        bgAtrr[3] = R.drawable.game_background_4;
-        bgAtrr[4] = R.drawable.game_background_5;
-        bgAtrr[5] = R.drawable.game_background_6;
-        bgAtrr[6] = R.drawable.game_background_7;
-        bgAtrr[7] = R.drawable.game_background_8;
-        bgAtrr[8] = R.drawable.game_background_9;
+        bgAtr[0] = R.drawable.game_background_1;
+        bgAtr[1] = R.drawable.game_background_2;
+        bgAtr[2] = R.drawable.game_background_3;
+        bgAtr[3] = R.drawable.game_background_4;
+        bgAtr[4] = R.drawable.game_background_5;
+        bgAtr[5] = R.drawable.game_background_6;
+        bgAtr[6] = R.drawable.game_background_7;
+        bgAtr[7] = R.drawable.game_background_8;
+        bgAtr[8] = R.drawable.game_background_9;
 
-        btnAtrr[0] = R.id.btn1;
-        btnAtrr[1] = R.id.btn2;
-        btnAtrr[2] = R.id.btn3;
-        btnAtrr[3] = R.id.btn4;
-        btnAtrr[4] = R.id.btn5;
-        btnAtrr[5] = R.id.btn6;
-        btnAtrr[6] = R.id.btn7;
-        btnAtrr[7] = R.id.btn8;
-        btnAtrr[8] = R.id.btn9;
+        btnAtr[0] = R.id.btn1;
+        btnAtr[1] = R.id.btn2;
+        btnAtr[2] = R.id.btn3;
+        btnAtr[3] = R.id.btn4;
+        btnAtr[4] = R.id.btn5;
+        btnAtr[5] = R.id.btn6;
+        btnAtr[6] = R.id.btn7;
+        btnAtr[7] = R.id.btn8;
+        btnAtr[8] = R.id.btn9;
     }
 
     private void initView() {
-        times = (TextView) findViewById(R.id.tv_time);
+        times = findViewById(R.id.tv_time);
 
-        playGame = (Button) findViewById(R.id.bt_play);
-        overGame = (Button) findViewById(R.id.bt_over);
+        playGame = findViewById(R.id.bt_play);
+        overGame = findViewById(R.id.bt_over);
 
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn2 = (Button) findViewById(R.id.btn2);
-        btn3 = (Button) findViewById(R.id.btn3);
-        btn4 = (Button) findViewById(R.id.btn4);
-        btn5 = (Button) findViewById(R.id.btn5);
-        btn6 = (Button) findViewById(R.id.btn6);
-        btn7 = (Button) findViewById(R.id.btn7);
-        btn8 = (Button) findViewById(R.id.btn8);
-        btn9 = (Button) findViewById(R.id.btn9);
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
+        btn4 = findViewById(R.id.btn4);
+        btn5 = findViewById(R.id.btn5);
+        btn6 = findViewById(R.id.btn6);
+        btn7 = findViewById(R.id.btn7);
+        btn8 = findViewById(R.id.btn8);
+        btn9 = findViewById(R.id.btn9);
 
-        show = (LinearLayout) findViewById(R.id.show);
+        show = findViewById(R.id.show);
     }
 }
 
