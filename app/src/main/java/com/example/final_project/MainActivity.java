@@ -11,7 +11,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button startGame;
-    private Button rank;
+    private Button continueGame;
     private Button explain;
     private Button exit;
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private void initListener() {
         BtnListener listener = new BtnListener();
         startGame.setOnClickListener(listener);
-        rank.setOnClickListener(listener);
+        continueGame.setOnClickListener(listener);
         explain.setOnClickListener(listener);
         exit.setOnClickListener(listener);
     }
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
 
         startGame = findViewById(R.id.btn_start);
-        rank = findViewById(R.id.btn_rank);
+        continueGame = findViewById(R.id.btn_continue);
         explain =  findViewById(R.id.btn_explain);
         exit =  findViewById(R.id.btn_exit);
     }
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent1 = new Intent(TAG, GameActivity.class);
                     startActivity(intent1);
                     break;
-                case R.id.btn_rank:
+                case R.id.btn_continue:
                     Intent intent2 = new Intent(TAG, GameActivity.class);
                     startActivity(intent2);
                     break;

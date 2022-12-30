@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.final_project.GameActivity">
+    tools:context="com.example.test.GameActivity">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -177,23 +177,21 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:onClick="btnClick"
-            android:text="開始"
-            android:background="@drawable/but_style"/>
+            android:text="开始"/>
         <TextView
             android:id="@+id/tvWhackAMoleScore"
             android:gravity="center"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text="分數"/>
+            android:text="分数"/>
         <Button
             android:id="@+id/btStopWhackAMole"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:onClick="btnClick"
-            android:text="結束"
-            android:background="@drawable/but_style"/>
+            android:text="结束"/>
     </LinearLayout>
 
 </LinearLayout>
