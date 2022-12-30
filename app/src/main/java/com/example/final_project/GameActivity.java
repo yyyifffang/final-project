@@ -1,6 +1,7 @@
-package com.example.test;
+package com.example.final_project;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class GameActivity extends Activity {
+public class GameActivity extends AppCompatActivity {
 
     private ImageView[][] view=new ImageView[4][4];
     private Button btStartWhackAMole,btStopWhackAMole;
@@ -79,7 +80,7 @@ public class GameActivity extends Activity {
                 break;
         }
     }
-    class MyAsyncTask extends AsyncTask<String,Integer,String>{
+    class MyAsyncTask extends AsyncTask<String,Integer,String> {
 
         @Override
         protected String doInBackground(String... strings) {
