@@ -16,8 +16,8 @@ public class GameActivity extends AppCompatActivity {
     private Button btStartWhackAMole,btStopWhackAMole;
     private TextView tvWhackAMoleScore;
 
-    private int time_s=1000; //难度的时间
-    private int time=time_s; //地鼠出来时间
+    private int time_s; //难度的时间
+    private int time; //地鼠出来时间
     private int score=0; //成绩，打地鼠个数
     private int num=0; //地鼠出来个数
     private int temp_i=0,temp_j=0; //记录上一次出现的地鼠在数组view中的下标
@@ -51,15 +51,33 @@ public class GameActivity extends AppCompatActivity {
         tvWhackAMoleScore= (TextView) findViewById(R.id.tvWhackAMoleScore);
         btStartWhackAMole.setClickable(true);
         btStopWhackAMole.setClickable(false);
+        view[0][0].setClickable(false);
+        view[0][1].setClickable(false);
+        view[0][2].setClickable(false);
+        view[0][3].setClickable(false);
+        view[1][0].setClickable(false);
+        view[1][1].setClickable(false);
+        view[1][2].setClickable(false);
+        view[1][3].setClickable(false);
+        view[2][0].setClickable(false);
+        view[2][1].setClickable(false);
+        view[2][2].setClickable(false);
+        view[2][3].setClickable(false);
+        view[3][0].setClickable(false);
+        view[3][1].setClickable(false);
+        view[3][2].setClickable(false);
+        view[3][3].setClickable(false);
+        time_s=1000;
+        time=time_s;
     }
 
     public void whackAMole(View view){
-        view.setBackgroundResource(R.drawable.gift);
-        view.setClickable(false);
+        view.setBackgroundResource(R.drawable.emptyhole);
         score++;
         time=time_s-score*20;
         tvWhackAMoleScore.setText("分數："+score);
     }
+
     public void btnClick(View view){
         switch (view.getId()){
             case R.id.btStartWhackAMole:
@@ -103,15 +121,33 @@ public class GameActivity extends AppCompatActivity {
 
         @Override
         protected void onProgressUpdate(Integer... values) { //主线程
-            if(flag==0){ //开始
+            if(flag==0){ //開始
                 view[values[0]][values[1]].setBackgroundResource(R.drawable.emptyhole);
-            }else if(flag==2){ //运行
+            }else if(flag==2){ //運行
+                //設置當麋鹿沒出現時無法點擊，也就不能加分
                 view[temp_i][temp_j].setBackgroundResource(R.drawable.emptyhole);
-                view[temp_i][temp_j].setClickable(false); //上一次出现的设置为不能点击
+                view[0][0].setClickable(false);
+                view[0][1].setClickable(false);
+                view[0][2].setClickable(false);
+                view[0][3].setClickable(false);
+                view[1][0].setClickable(false);
+                view[1][1].setClickable(false);
+                view[1][2].setClickable(false);
+                view[1][3].setClickable(false);
+                view[2][0].setClickable(false);
+                view[2][1].setClickable(false);
+                view[2][2].setClickable(false);
+                view[2][3].setClickable(false);
+                view[3][0].setClickable(false);
+                view[3][1].setClickable(false);
+                view[3][2].setClickable(false);
+                view[3][3].setClickable(false);
+                //當麋鹿出現才能被點擊，才可以加分
                 view[values[0]][values[1]].setBackgroundResource(R.drawable.deer);
                 view[values[0]][values[1]].setClickable(true);
                 num++;
-                if((num-score)==5){
+                //只有五次miss機會
+                if((num-score)==6){
                     flag=1;
                     btStartWhackAMole.setClickable(true);
                     Toast.makeText(GameActivity.this,"遊戲結束",Toast.LENGTH_SHORT).show();

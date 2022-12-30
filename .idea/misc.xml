@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Fragr/AndroidStudioProjects/final_project/app/src/main/res/drawable/but_style.xml" value="0.1785" />
         <entry key="..\:/Users/Fragr/AndroidStudioProjects/final_project/app/src/main/res/layout/activity_main.xml" value="0.175" />
         <entry key="..\:/Users/Fragr/AndroidStudioProjects/final_project/app/src/main/res/layout/explain.xml" value="0.1" />
-        <entry key="..\:/Users/Fragr/AndroidStudioProjects/final_project/app/src/main/res/layout/game.xml" value="0.1" />
+        <entry key="..\:/Users/Fragr/AndroidStudioProjects/final_project/app/src/main/res/layout/game.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Fragr/AndroidStudioProjects/final_project/app/src/main/res/layout/rank.xml" value="0.17395833333333333" />
       </map>
     </option>
   </component>
